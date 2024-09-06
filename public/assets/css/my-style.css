@@ -1,0 +1,31 @@
+/*
+-------------- Style by Viktor Walter
+*/
+a {
+    text-decoration: none;
+}
+.wavifun_top-link a img {
+    width: 35px;
+    height: 100%;
+    object-fit: cover;
+}
+h2 span {
+    color: #1a76d1;
+}
+.response-message {
+    position: fixed;
+    border-radius: 5px;
+    color: #fff;
+    padding: 20px;
+    top: 89px;
+    right: 0;
+    z-index: 10000;
+    cursor: pointer;
+}
+.response-message ul {
+    padding: 0;
+    margin: 0;
+}
+.response-message li {
+    list-style: none;
+}
