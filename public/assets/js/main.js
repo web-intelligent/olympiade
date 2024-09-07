@@ -154,10 +154,10 @@ Version:	1.1
 		/*=====================================
 			Counter Up JS
 		======================================*/
-		$('.counter').counterUp({
-			delay:20,
-			time:2000
-		});
+		// $('.counter').counterUp({
+		// 	delay:20,
+		// 	time:2000
+		// });
 
 		/*===============================
 			Clients Slider JS

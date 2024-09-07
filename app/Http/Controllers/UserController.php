@@ -193,7 +193,7 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        if($user) return redirect()->route('profile.auth')->with('success', 'Регистрация прошла успешно, авторизуйтесь, чтобы войти в личный кабинет');
+        if($user) return redirect()->route('login')->with('success', 'Регистрация прошла успешно, авторизуйтесь, чтобы войти в личный кабинет');
         return redirect()->back()->with('wrong', 'Зарегистрироваться не удалось, повторите попытку или обратитесь в службу поддержки');
 
     }
