@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NeedHelpMessage;
+use App\Notifications\HelpUserNotification;
 use App\Services\AppService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -438,6 +442,18 @@ class UserController extends Controller
 
         if($user) return redirect()->route('profile.index')->with('success', 'Данные профиля обновлены успешно');
         return redirect()->back()->with('wrong', 'Что-то пошло не так, попробуйте ещё раз или обратитесь в службу поддержки');
+    }
+
+
+    /*
+     * Отправка письма о помощи
+     * */
+    public function sendHelpMessage(Request $request)
+    {
+        Mail::to('contact@еип-фкис.рф')->send(new NeedHelpMessage($request->name, $request->email, $request->phone, $request->message));
+
+         return redirect()->back()->with('success', 'Мы получили Ваше сообщение и спешим на помощь');
+
     }
 
 }

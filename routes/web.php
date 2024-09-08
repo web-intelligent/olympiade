@@ -55,3 +55,5 @@ Route::group(['prefix' => 'password', 'middleware' => 'guest'], function () {
     Route::get('/сброс-пароля', [PasswordController::class, 'reset'])->name('password.reset');
     Route::post('/сброс-пароля', [PasswordController::class, 'resetRequest'])->name('password.reset.request');
 });
+
+Route::post('/send-help-message', [UserController::class, 'sendHelpMessage'])->name('need.help');

@@ -662,7 +662,8 @@
         </div>
         <div class="row">
             <div class="col-lg-6 col-md-12 offset-sm-0 offset-lg-3">
-                <form class="form" action="#" method="POST">
+                <form class="form" action="{{ route('need.help') }}" method="POST">
+                    @csrf
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-12">
                             <div class="form-group">

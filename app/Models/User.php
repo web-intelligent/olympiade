@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\HelpUserNotification;
 use App\Notifications\ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -68,4 +69,5 @@ class User extends Authenticatable
         $this->notify(new ResetPasswordNotification($url));
 
     }
+
 }

@@ -49,6 +49,11 @@
     <link rel="stylesheet" href="{{ asset('public/assets/css/my-style.css') }}">
 
 </head>
+<style>
+    * {
+        text-transform: none !important;
+    }
+</style>
 <body>
 @if(session()->has('success'))
     <div class="response-message bg-success">
